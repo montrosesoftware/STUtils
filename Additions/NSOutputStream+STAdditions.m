@@ -40,7 +40,7 @@
     NSInteger bytesWritten = 0;
     
     size_t usedByteLength;
-    if ([inString getBytes:buffer maxLength:byteLength usedLength:&usedByteLength encoding:inEncoding options:NSStringEncodingConversionExternalRepresentation range:NSMakeRange(0,byteLength) remainingRange:NULL]) {
+    if ([inString getBytes:buffer maxLength:byteLength usedLength:(unsigned int*)&usedByteLength encoding:inEncoding options:NSStringEncodingConversionExternalRepresentation range:NSMakeRange(0,byteLength) remainingRange:NULL]) {
         if (!self.hasSpaceAvailable) {
             NSLog(@"Output stream has no space available.");
         }
